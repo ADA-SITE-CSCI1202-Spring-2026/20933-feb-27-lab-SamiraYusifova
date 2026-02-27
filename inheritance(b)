@@ -1,0 +1,33 @@
+import java.util.Arrays;
+public class teacher extends person {
+    private String department;
+    private String courses;
+    public teacher(String firstname, String lastname,String gender, String department, String courses){
+        super(firstname, lastname, gender);
+        this.department = department;
+        this.courses = courses;
+    }
+    public String getdepartment(){
+        return department;
+    }
+    public String getcourses(){
+        return courses;
+    }
+    public void setdepartment(String department){
+        this.department = department;
+    }
+    public void setcourses(String courses){
+        this.courses = courses;
+    }
+    public String toString(){
+        return "teacher{" + super.toString() + ", department='" + department + "', courses='" + courses + "'}";
+    }
+    public boolean equals(teacher t){
+        if (t == null){
+            return false;
+        }
+        return super.equals(t) &&
+               this.department.equals(t.getdepartment()) &&
+               this.courses.equals(t.getcourses());
+    }
+}
